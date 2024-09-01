@@ -20,4 +20,16 @@ public class TouristService {
     public void addTouristAttraction(TouristAttraction Attraction){
         repository.addTouristAttraction(Attraction);
     }
+    //read. simply return the list of tourist attractions and print them out
+    public void getAllTouristAttractions() {
+        repository.getAllTouristAttractions();
+    }
+    //update. simply make a UpdatedAttraction object and call this method with the index of the object you want to update
+    public void updateTouristAttraction( int index, TouristAttraction UpdatedAttraction){
+        repository.updateTouristAttraction(index, UpdatedAttraction);
+    }
+    //delete. simply remove the object at the index given
+    public void deleteTouristAttraction(int index){
+        repository.deleteTouristAttraction(index);
+    }
 }
