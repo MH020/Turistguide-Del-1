@@ -15,6 +15,7 @@ public class TouristRepository {
     public void addTouristAttraction(TouristAttraction Attraction){
         touristAttractionsList.add(Attraction);
     }
+
     //read. simply return the list of tourist attractions and print them out
     public List<TouristAttraction> getAllTouristAttractions() {
         for (TouristAttraction attraction : touristAttractionsList) {
