@@ -17,6 +17,7 @@ public class TouristAttraction {
     public void setDescription(String description) {
         this.description = description;
     }
+
     //constructor
     public TouristAttraction(String name, String description) {
         this.name = name;

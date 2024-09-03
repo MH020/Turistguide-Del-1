@@ -19,7 +19,7 @@ public class TouristController {
         this.TouristService = TouristService;
     }
     @RequestMapping("/Attractions") // this is the root of the website
-    public ResponseEntity<List<TouristAttraction>> attractions(){
+    public ResponseEntity<List<TouristAttraction>> getAllTouristAttractions(){
        List<TouristAttraction> attractions = TouristService.getAllTouristAttractions();
         return new ResponseEntity<>(attractions, HttpStatus.OK);
     }

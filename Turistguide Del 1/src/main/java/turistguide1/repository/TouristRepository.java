@@ -7,9 +7,10 @@ import java.util.List;
 
 @Repository
 public class TouristRepository {
+    // this is a list of tourist attractions that will be used to store the tourist attractions
     private  ArrayList<TouristAttraction> touristAttractionsList = new ArrayList<>();
 
-    //trying to implitment the CRUD operations as i understand them
+    //trying to implitment the CRUD operations as i understand them:
 
     //create. add a tourist attraction to the list
     public void addTouristAttraction(TouristAttraction Attraction){
@@ -24,11 +25,11 @@ public class TouristRepository {
         return new ArrayList<>(touristAttractionsList);
     }
     //update. simply make a UpdatedAttraction object and call this method with the index of the object you want to update
-    public void updateTouristAttraction( int index, TouristAttraction UpdatedAttraction){
+    public List<TouristAttraction> updateTouristAttraction( int index, TouristAttraction UpdatedAttraction){
        if (index < 0 || index >= touristAttractionsList.size()) {
             throw new IllegalArgumentException("Index out of bounds");
         }
-        touristAttractionsList.set(index, UpdatedAttraction);
+        return null;//touristAttractionsList.set(index, UpdatedAttraction);
 
     }
     //delete. simply remove the object at the index given

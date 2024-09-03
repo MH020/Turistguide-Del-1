@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 import turistguide1.Model.TouristAttraction;
 import turistguide1.repository.TouristRepository;
 
+import java.util.List;
+
 @Service
 public class TouristService {
     // This class is a service class that is used to be the middle man between the controller and the database(Repository).
@@ -19,10 +21,12 @@ public class TouristService {
     //create. add a tourist attraction to the list
     public void addTouristAttraction(TouristAttraction Attraction){
         repository.addTouristAttraction(Attraction);
+
     }
     //read. simply return the list of tourist attractions and print them out
-    public void getAllTouristAttractions() {
+    public List<TouristAttraction> getAllTouristAttractions() {
         repository.getAllTouristAttractions();
+        return null;
     }
     //update. simply make a UpdatedAttraction object and call this method with the index of the object you want to update
     public void updateTouristAttraction( int index, TouristAttraction UpdatedAttraction){
