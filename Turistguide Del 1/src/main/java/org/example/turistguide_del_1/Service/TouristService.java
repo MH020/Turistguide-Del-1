@@ -35,4 +35,9 @@ public class TouristService {
     public void deleteTouristAttraction(int index){
         repository.deleteTouristAttraction(index);
     }
+
+    public TouristAttraction getTouristAttractionByName(String name){
+        TouristAttraction ta = repository.getTouristAttractionByName(name);
+        return ta;
+    }
 }

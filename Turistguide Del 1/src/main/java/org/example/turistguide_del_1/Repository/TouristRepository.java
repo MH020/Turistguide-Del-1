@@ -8,7 +8,7 @@ import java.util.List;
 @Repository
 public class TouristRepository {
     // this is a list of tourist attractions that will be used to store the tourist attractions
-    private  ArrayList<TouristAttraction> touristAttractions = new ArrayList<>();
+    private  ArrayList<TouristAttraction> touristAttractions = new ArrayList<>(); //Using a map (name, desc) could be beneficial.
 
     //trying to implitment the CRUD operations as i understand them:
 
@@ -46,6 +46,19 @@ public class TouristRepository {
             throw new IllegalArgumentException("Index out of bounds");
         }
         touristAttractions.remove(index);
+    }
+
+    public TouristAttraction getTouristAttractionByName(String name){
+        TouristAttraction ta;
+
+        if (touristAttractions.indexOf(name) != -1) {//if Tourist attraction with name exists:
+            ta = touristAttractions.get(touristAttractions.indexOf(name)); //ta = list.get(element with same index as ta
+            return ta;
+        }
+        System.out.println("no tourist attractions with that name found");//incase touristAttraction isn't in list.
+        ta = null;
+
+        return ta;
     }
 
 
