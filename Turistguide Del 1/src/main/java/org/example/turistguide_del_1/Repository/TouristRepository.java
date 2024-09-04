@@ -33,11 +33,18 @@ public class TouristRepository {
         return new ArrayList<>(touristAttractions);
     }
     //update. simply make a UpdatedAttraction object and call this method with the index of the object you want to update
-    public List<TouristAttraction> updateTouristAttraction( int index, TouristAttraction UpdatedAttraction){
-       if (index < 0 || index >= touristAttractions.size()) {
+    public void updateTouristAttraction( int index, TouristAttraction UpdatedAttraction) { //id/navn, String newName, String newDesc
+
+        if (index < 0 || index >= touristAttractions.size()) {
             throw new IllegalArgumentException("Index out of bounds");
         }
-        return null;//touristAttractionsList.set(index, UpdatedAttraction);
+        touristAttractions.set(index, UpdatedAttraction);
+        List taList;
+        //updated attraction
+        //set name
+        //set desc
+        //
+
 
     }
     //delete. simply remove the object at the index given
