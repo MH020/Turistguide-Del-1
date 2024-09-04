@@ -29,8 +29,9 @@ public class TouristController {
         return new ResponseEntity<>(attractions, HttpStatus.OK);
     }
     @PostMapping("/add")
-    public ResponseEntity<boolean> getTouristAttraction(@RequestBody TouristAttraction touristAttraction){
-
+    public ResponseEntity<TouristAttraction> getTouristAttraction(@RequestBody TouristAttraction touristAttraction){
+        touristService.addTouristAttraction(touristAttraction);
+      return new ResponseEntity<>(touristAttraction, HttpStatus.CREATED);
     }
 
 }
