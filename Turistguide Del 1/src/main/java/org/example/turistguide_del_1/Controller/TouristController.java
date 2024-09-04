@@ -1,11 +1,11 @@
-package turistguide1.Controller;
+package org.example.turistguide_del_1.Controller;
 
+import org.example.turistguide_del_1.Service.TouristService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import turistguide1.Model.TouristAttraction;
-import turistguide1.Service.TouristService;
+import org.example.turistguide_del_1.Model.TouristAttraction;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping ("/welcome")
 public class TouristController {
     // This class is a controller class
-    private final TouristService TouristService;
+    private final org.example.turistguide_del_1.Service.TouristService TouristService;
 
     public TouristController(TouristService TouristService) {
         this.TouristService = TouristService;

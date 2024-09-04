@@ -1,4 +1,4 @@
-package turistguide1.Model;
+package org.example.turistguide_del_1.Model;
 
 public class TouristAttraction {
     private String name;

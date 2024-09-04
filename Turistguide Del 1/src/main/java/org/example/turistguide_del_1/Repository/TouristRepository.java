@@ -1,7 +1,7 @@
-package turistguide1.repository;
+package org.example.turistguide_del_1.Repository;
 
 import org.springframework.stereotype.Repository;
-import turistguide1.Model.TouristAttraction; //added import of TouristAttraction for it to work
+import org.example.turistguide_del_1.Model.TouristAttraction; //added import of TouristAttraction for it to work
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package turistguide1.Service;
+package org.example.turistguide_del_1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
