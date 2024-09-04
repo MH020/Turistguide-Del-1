@@ -28,7 +28,6 @@ public class TouristController {
     @GetMapping("/{name}")
     public ResponseEntity<TouristAttraction> getTouristAttractionByName(@PathVariable String name){
         TouristAttraction ta = touristService.getTouristAttractionByName(name);
-
         return new ResponseEntity<>(ta,HttpStatus.OK);
     }
     
@@ -37,15 +36,10 @@ public class TouristController {
         touristService.addTouristAttraction(touristAttraction);
       return new ResponseEntity<>(touristAttraction, HttpStatus.CREATED);
     }
-    @PostMapping("/update/{index}")
-    public ResponseEntity<TouristAttraction> updateTouristAttraction(@PathVariable int index, @RequestBody TouristAttraction touristAttraction){
-        touristService.updateTouristAttraction(index, touristAttraction);
-        return new ResponseEntity<>(touristAttraction, HttpStatus.OK)
-    }
-
-    @PostMapping
-    public ResponseEntity<TouristAttraction> update(@RequestBody TouristAttraction newTA){
-        touristService.update(newTA);
+    @PostMapping("/update")
+    public ResponseEntity<TouristAttraction> updateTouristAttraction(@RequestBody TouristAttraction touristAttraction){
+        touristService.updateTouristAttraction(touristAttraction);
+        return new ResponseEntity<>(touristAttraction, HttpStatus.OK);
     }
     @DeleteMapping("/delete/{index}")
     public ResponseEntity<TouristAttraction> deleteTouristAttraction(@PathVariable int index){

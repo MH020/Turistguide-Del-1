@@ -33,27 +33,13 @@ public class TouristRepository {
         return new ArrayList<>(touristAttractions);
     }
     //update. simply make a UpdatedAttraction object and call this method with the index of the object you want to update
-    public void updateTouristAttraction( TouristAttraction newAttr) { //id/navn, String newName, String newDesc
-
-        for (TouristAttraction at : touristAttractions) {
-            if (newAttr.equals(at)){
-                at = newAttr;
-                break;
+    public void updateTouristAttraction(String name, String newName, String newDesc){
+        for (TouristAttraction attraction : touristAttractions) {
+            if (attraction.getName().equals(name)) {
+                attraction.setName(newName);
+                attraction.setDescription(newDesc);
             }
         }
-        
-        //getTouristAttractionByName(newAttr.getName());
-        if (index < 0 || index >= touristAttractions.size()) {
-            throw new IllegalArgumentException("Index out of bounds");
-        }
-        touristAttractions.set(index, UpdatedAttraction);
-        List taList;
-        //updated attraction
-        //set name
-        //set desc
-        //
-
-
     }
     //delete. simply remove the object at the index given
     public void deleteTouristAttraction(int index){
@@ -65,7 +51,6 @@ public class TouristRepository {
 
     public TouristAttraction getTouristAttractionByName(String name){
         TouristAttraction ta;
-
         if (touristAttractions.indexOf(name) != -1) {//if Tourist attraction with name exists:
             ta = touristAttractions.get(touristAttractions.indexOf(name)); //ta = list.get(element with same index as ta
             return ta;
