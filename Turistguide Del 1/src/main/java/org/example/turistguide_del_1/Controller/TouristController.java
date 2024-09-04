@@ -40,7 +40,12 @@ public class TouristController {
     @PostMapping("/update/{index}")
     public ResponseEntity<TouristAttraction> updateTouristAttraction(@PathVariable int index, @RequestBody TouristAttraction touristAttraction){
         touristService.updateTouristAttraction(index, touristAttraction);
-        return new ResponseEntity<>(touristAttraction, HttpStatus.OK);
+        return new ResponseEntity<>(touristAttraction, HttpStatus.OK)
+    }
+
+    @PostMapping
+    public ResponseEntity<TouristAttraction> update(@RequestBody TouristAttraction newTA){
+        touristService.update(newTA);
     }
     @DeleteMapping("/delete/{index}")
     public ResponseEntity<TouristAttraction> deleteTouristAttraction(@PathVariable int index){

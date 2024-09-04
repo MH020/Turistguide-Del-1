@@ -33,8 +33,16 @@ public class TouristRepository {
         return new ArrayList<>(touristAttractions);
     }
     //update. simply make a UpdatedAttraction object and call this method with the index of the object you want to update
-    public void updateTouristAttraction( int index, TouristAttraction UpdatedAttraction) { //id/navn, String newName, String newDesc
+    public void updateTouristAttraction( TouristAttraction newAttr) { //id/navn, String newName, String newDesc
 
+        for (TouristAttraction at : touristAttractions) {
+            if (newAttr.equals(at)){
+                at = newAttr;
+                break;
+            }
+        }
+        
+        //getTouristAttractionByName(newAttr.getName());
         if (index < 0 || index >= touristAttractions.size()) {
             throw new IllegalArgumentException("Index out of bounds");
         }
