@@ -25,8 +25,7 @@ public class TouristService {
     }
     //read. simply return the list of tourist attractions and print them out
     public List<TouristAttraction> getAllTouristAttractions() {
-        repository.getAllTouristAttractions();
-        return null;
+        return repository.getAllTouristAttractions();
     }
     //update. simply make a UpdatedAttraction object and call this method with the index of the object you want to update
     public void updateTouristAttraction( int index, TouristAttraction UpdatedAttraction){
