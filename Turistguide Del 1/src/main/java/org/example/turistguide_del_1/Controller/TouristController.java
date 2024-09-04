@@ -31,12 +31,21 @@ public class TouristController {
 
         return new ResponseEntity<>(ta,HttpStatus.OK);
     }
-
-
+    
     @PostMapping("/add")
     public ResponseEntity<TouristAttraction> getTouristAttraction(@RequestBody TouristAttraction touristAttraction){
         touristService.addTouristAttraction(touristAttraction);
       return new ResponseEntity<>(touristAttraction, HttpStatus.CREATED);
+    }
+    @PostMapping("/update/{index}")
+    public ResponseEntity<TouristAttraction> updateTouristAttraction(@PathVariable int index, @RequestBody TouristAttraction touristAttraction){
+        touristService.updateTouristAttraction(index, touristAttraction);
+        return new ResponseEntity<>(touristAttraction, HttpStatus.OK);
+    }
+    @DeleteMapping("/delete/{index}")
+    public ResponseEntity<TouristAttraction> deleteTouristAttraction(@PathVariable int index){
+        touristService.deleteTouristAttraction(index);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }
