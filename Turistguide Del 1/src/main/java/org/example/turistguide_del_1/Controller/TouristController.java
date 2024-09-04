@@ -4,23 +4,33 @@ import org.example.turistguide_del_1.Service.TouristService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.example.turistguide_del_1.Model.TouristAttraction;
 
 import java.util.List;
 
+
 @Controller
-@RequestMapping ("/welcome")
+@RequestMapping ("/attractions")
 public class TouristController {
     // This class is a controller class
-    private final org.example.turistguide_del_1.Service.TouristService TouristService;
+    private final org.example.turistguide_del_1.Service.TouristService touristService;
 
-    public TouristController(TouristService TouristService) {
-        this.TouristService = TouristService;
+    public TouristController(TouristService touristService) {
+        this.touristService = touristService;
     }
-    @RequestMapping("/Attractions") // this is the root of the website
+
+    @GetMapping
     public ResponseEntity<List<TouristAttraction>> getAllTouristAttractions(){
-       List<TouristAttraction> attractions = TouristService.getAllTouristAttractions();
+       List<TouristAttraction> attractions = touristService.getAllTouristAttractions();
         return new ResponseEntity<>(attractions, HttpStatus.OK);
     }
+    @PostMapping("/add")
+    public ResponseEntity<boolean> getTouristAttraction(@RequestBody TouristAttraction touristAttraction){
+
+    }
+
 }
