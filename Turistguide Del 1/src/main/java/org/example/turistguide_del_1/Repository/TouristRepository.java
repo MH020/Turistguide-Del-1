@@ -19,6 +19,7 @@ public class TouristRepository {
     private void populateAttractions() {
         touristAttractions.add(new TouristAttraction("Den Blå Plant", "En masse fisk"));
         touristAttractions.add(new TouristAttraction("Tivoli", "Forlystelsespark midt i København"));
+        touristAttractions.add(new TouristAttraction("Rundetårn", "En rund bygning"));
     }
 
     //create. add a tourist attraction to the list
@@ -31,7 +32,7 @@ public class TouristRepository {
         return new ArrayList<>(touristAttractions);
     }
 
-    //update. simply make a UpdatedAttraction object and call this method with the index of the object you want to update
+    //update. find the tourist attraction by name and update the description of it to the new description given in the parameters
     public void updateTouristAttraction(String name, String newDesc){
         for (TouristAttraction attraction : touristAttractions) {
             if (attraction.getName().equals(name)) {
@@ -46,7 +47,7 @@ public class TouristRepository {
         }
         touristAttractions.remove(index);
     }
-
+        //get name. get tourist attraction by name and return it if it exists in the list of tourist attractions
     public TouristAttraction getTouristAttractionByName(String name){
         for (TouristAttraction attraction : touristAttractions) {
             if (attraction.getName().equals(name)) {
