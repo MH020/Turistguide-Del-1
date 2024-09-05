@@ -27,7 +27,7 @@ public class TouristService {
     public List<TouristAttraction> getAllTouristAttractions() {
         return repository.getAllTouristAttractions();
     }
-    //update. simply make a UpdatedAttraction object and call this method with the index of the object you want to update
+    //update.
     public void updateTouristAttraction(TouristAttraction touristAttraction) {
         repository.updateTouristAttraction(touristAttraction.getName(), touristAttraction.getDescription());
     }

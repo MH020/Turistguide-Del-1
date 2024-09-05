@@ -18,6 +18,7 @@ public class TouristRepository {
 
     private void populateAttractions() {
         touristAttractions.add(new TouristAttraction("Den Blå Plant", "En masse fisk"));
+        touristAttractions.add(new TouristAttraction("Tivoli", "Forlystelsespark midt i København"));
     }
 
     //create. add a tourist attraction to the list
