@@ -28,10 +28,9 @@ public class TouristRepository {
 
     //read. simply return the list of tourist attractions and print them out
     public List<TouristAttraction> getAllTouristAttractions() {
-        for (TouristAttraction attraction : touristAttractions) {
-        }
         return new ArrayList<>(touristAttractions);
     }
+
     //update. simply make a UpdatedAttraction object and call this method with the index of the object you want to update
     public void updateTouristAttraction(String name, String newDesc){
         for (TouristAttraction attraction : touristAttractions) {

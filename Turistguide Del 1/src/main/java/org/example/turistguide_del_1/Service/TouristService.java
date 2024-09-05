@@ -16,7 +16,7 @@ public class TouristService {
     public TouristService(TouristRepository repository) {
         this.repository = repository;
     }
-    // so i will now implement the CRUD operations in this class that use the repository to do the operations
+    // so I will now implement the CRUD operations in this class that use the repository to do the operations
 
     //create. add a tourist attraction to the list
     public void addTouristAttraction(TouristAttraction Attraction){
@@ -35,6 +35,7 @@ public class TouristService {
     public void deleteTouristAttraction(int index){
         repository.deleteTouristAttraction(index);
     }
+
     //get tourist attraction by name
     public TouristAttraction getTouristAttractionByName(String name){
         TouristAttraction ta = repository.getTouristAttractionByName(name);
