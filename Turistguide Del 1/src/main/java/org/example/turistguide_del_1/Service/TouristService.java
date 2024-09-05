@@ -28,8 +28,8 @@ public class TouristService {
         return repository.getAllTouristAttractions();
     }
     //update. simply make a UpdatedAttraction object and call this method with the index of the object you want to update
-    public void updateTouristAttraction(String name, String newName, String newDesc) {
-        repository.updateTouristAttraction(name, newName, newDesc);
+    public void updateTouristAttraction(TouristAttraction touristAttraction) {
+        repository.updateTouristAttraction(touristAttraction.getName(), touristAttraction.getDescription());
     }
     //delete. simply remove the object at the index given
     public void deleteTouristAttraction(int index){

@@ -33,10 +33,9 @@ public class TouristRepository {
         return new ArrayList<>(touristAttractions);
     }
     //update. simply make a UpdatedAttraction object and call this method with the index of the object you want to update
-    public void updateTouristAttraction(String name, String newName, String newDesc){
+    public void updateTouristAttraction(String name, String newDesc){
         for (TouristAttraction attraction : touristAttractions) {
             if (attraction.getName().equals(name)) {
-                attraction.setName(newName);
                 attraction.setDescription(newDesc);
             }
         }
