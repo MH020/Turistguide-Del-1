@@ -29,7 +29,6 @@ public class TouristRepository {
     //read. simply return the list of tourist attractions and print them out
     public List<TouristAttraction> getAllTouristAttractions() {
         for (TouristAttraction attraction : touristAttractions) {
-            System.out.print("name: " + attraction.getName() + " description: " + attraction.getDescription());
         }
         return new ArrayList<>(touristAttractions);
     }

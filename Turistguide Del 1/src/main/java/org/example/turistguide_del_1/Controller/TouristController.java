@@ -40,7 +40,6 @@ public class TouristController {
     public ResponseEntity<TouristAttraction> updateTouristAttraction(@RequestBody TouristAttraction touristAttraction){
         touristService.updateTouristAttraction(touristAttraction);
         return new ResponseEntity<>(touristAttraction, HttpStatus.OK);
-
     }
     @DeleteMapping("/delete/{index}")
     public ResponseEntity<TouristAttraction> deleteTouristAttraction(@PathVariable int index){
