@@ -50,16 +50,14 @@ public class TouristRepository {
     }
 
     public TouristAttraction getTouristAttractionByName(String name){
-        TouristAttraction ta;
-        if (touristAttractions.indexOf(name) != -1) {//if Tourist attraction with name exists:
-            ta = touristAttractions.get(touristAttractions.indexOf(name)); //ta = list.get(element with same index as ta
-            return ta;
+        for (TouristAttraction attraction : touristAttractions) {
+            if (attraction.getName().equals(name)) {
+                return attraction;
+            }
         }
-        System.out.println("no tourist attractions with that name found");//incase touristAttraction isn't in list.
-        ta = null;
-
-        return ta;
+        return null;
     }
+
 
 
 }
